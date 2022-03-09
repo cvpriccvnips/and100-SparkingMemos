@@ -28,5 +28,13 @@ public class MainActivity extends AppCompatActivity {
                 flashcardAnswer.setVisibility(View.VISIBLE);
             }
         });
+
+        flashcardAnswer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                flashcardAnswer.setVisibility(View.INVISIBLE);
+                questionText.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }

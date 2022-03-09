@@ -11,11 +11,13 @@
         android:id="@+id/flashcard_question_textview"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:text="What is longest river in world?"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:background="#000000"
+        android:gravity="center"
+
+        android:text="What is longest river in world?"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,9 +32,13 @@
         android:textSize="40sp"
         android:gravity="center"
         android:text="Nile River"
-        android:layout_centerVertical="true"
+        
         android:layout_centerHorizontal="true"
         android:visibility="invisible"
+        android:background="#000000"
+        android:textColor="#ffffff"
+
+
         />
 <!--        android:layout_below="@id/flashcard_question_textview" -->
 
