@@ -7,17 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-
         android:id="@+id/flashcard_question_textview"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:background="#000000"
+        android:background="@drawable/card_background"
         android:gravity="center"
 
-        android:text="What is longest river in world?"
-        android:textColor="#ffffff"
+        android:text="Who is the 44th President of U.S?"
+        android:textColor="#60e1fb"
         android:textSize="40sp"
+        android:elevation="5dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,22 +25,74 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/answer1_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/flashcard_question_textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+
+        android:background="#ffec33"
+        android:gravity="center"
+
+        android:text="Bill Clinton"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/answer2_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/answer1_textview"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#ffec33"
+        android:gravity="center"
+
+        android:text="George H. W. Bush"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/answer3_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/answer2_textview"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#ffec33"
+
+        android:gravity="center"
+        android:text="Barack Obama"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/choices_visibility_imageview"
+        android:src="@drawable/ic_iconmonstr_fish_1"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@id/answer3_textview"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
 
         android:id="@+id/flashcard_answer_textview"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:textSize="40sp"
+        android:background="#f6fb60"
         android:gravity="center"
+
         android:text="Nile River"
-        
-        android:layout_centerHorizontal="true"
+        android:textColor="#fb608e"
+        android:textSize="40sp"
         android:visibility="invisible"
-        android:background="#000000"
-        android:textColor="#ffffff"
 
 
         />
-<!--        android:layout_below="@id/flashcard_question_textview" -->
+    <!--        android:layout_below="@id/flashcard_question_textview" -->
 
 
 
