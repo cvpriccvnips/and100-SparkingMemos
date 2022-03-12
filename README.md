@@ -1,4 +1,4 @@
-## NAME_OF_YOUR_APP_HERE
+## Jinda(Cecil)'s Flashcard APP
 
 
 ## Lab 2
@@ -31,7 +31,7 @@
 ## Lab 1
 
 ### App Description
-This is a flashcard app.
+I completed all of the required steps for the first lab. In this lab I built a simple implementation of the flashcards app and learned how to layout views on a storyboard, connect them to code, and how to push my code to Github.
 
 ### App Walk-though
 
