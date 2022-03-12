@@ -63,15 +63,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        toggle.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                ans1.setVisibility(View.INVISIBLE);
-//                ans2.setVisibility(View.INVISIBLE);
-//                ans3.setVisibility(View.INVISIBLE);
-//                (ImageView) findViewById(R.id.choices_visibility_imageview).setImageResource(R.drawable.show_icon);
-//            }
-//        });
+
+        toggle.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                ans1.setVisibility(View.INVISIBLE);
+                ans2.setVisibility(View.INVISIBLE);
+                ans3.setVisibility(View.INVISIBLE);
+                ((ImageView)findViewById(R.id.choices_visibility_imageview)).setImageResource(R.drawable.show_icon);
+            }
+        });
+
+
 
     }
 }

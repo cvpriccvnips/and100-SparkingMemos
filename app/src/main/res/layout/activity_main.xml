@@ -67,15 +67,14 @@
         android:textSize="30sp" />
 
     <ImageView
+        android:id="@+id/choices_visibility_imageview"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/choices_visibility_imageview"
-        android:src="@drawable/ic_iconmonstr_fish_1"
+        android:layout_below="@id/answer3_textview"
         android:layout_centerHorizontal="true"
 
-        android:layout_below="@id/answer3_textview"
-        android:layout_marginTop="100dp"
-        />
+        android:layout_marginTop="38dp"
+        android:src="@drawable/ic_iconmonstr_fish_1" />
 
     <TextView
 
