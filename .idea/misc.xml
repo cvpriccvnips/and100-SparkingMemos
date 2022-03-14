@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/card_background.xml" value="0.1195" />
         <entry key="app/src/main/res/drawable/ic_iconmonstr_fish_1.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/icon_add.xml" value="0.145" />
+        <entry key="app/src/main/res/drawable/show_icon.xml" value="0.145" />
+        <entry key="app/src/main/res/layout/activity_add_flashcard.xml" value="0.115861479264643" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16462097167968748" />
       </map>
     </option>

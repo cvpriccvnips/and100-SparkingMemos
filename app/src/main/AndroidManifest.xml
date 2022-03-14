@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CecilsFlashcardApp">
         <activity
+            android:name=".addFlashcard"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -3,6 +3,7 @@ package com.example.cecilsflashcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 //import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         TextView ans2=findViewById(R.id.answer2_textview);
         TextView ans3=findViewById(R.id.answer3_textview);
         ImageView toggle=findViewById(R.id.choices_visibility_imageview);
+        ImageView addButton=findViewById(R.id.add_button);
 
         questionText.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
                 ans2.setVisibility(View.INVISIBLE);
                 ans3.setVisibility(View.INVISIBLE);
                 ((ImageView)findViewById(R.id.choices_visibility_imageview)).setImageResource(R.drawable.show_icon);
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(MainActivity.this,addFlashcard.class);
+                MainActivity.this.startActivityForResult(intent,100);
             }
         });
 
