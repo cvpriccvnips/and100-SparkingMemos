@@ -48,6 +48,7 @@
     <property name="ScreenRecorderTask.SavePath" value="$USER_HOME$/device-2022-03-04-205454.webm" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-1812845923">
