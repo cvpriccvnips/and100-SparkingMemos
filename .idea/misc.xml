@@ -9,8 +9,10 @@
         <entry key="app/src/main/res/drawable/ic_iconmonstr_fish_1.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/icon_add.xml" value="0.145" />
+        <entry key="app/src/main/res/drawable/icon_edit.xml" value="0.104" />
         <entry key="app/src/main/res/drawable/show_icon.xml" value="0.145" />
         <entry key="app/src/main/res/layout/activity_add_flashcard.xml" value="0.2535797119140625" />
+        <entry key="app/src/main/res/layout/activity_edit_card.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29257049560546877" />
       </map>
     </option>

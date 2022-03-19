@@ -100,11 +100,25 @@ public class MainActivity extends AppCompatActivity {
                 //go to addCardActivity
                 Intent intent=new Intent(MainActivity.this, addCardActivity.class);
 //                startActivity(intent);
-
+//                intent.putExtra("QUESTION_KEY","Enter your question");
+//                intent.putExtra("ANSWER_KEY","Enter your answer");
                 //use request code
                 startActivityForResult(intent,100);
             }
         });
+
+        ImageView editButton=findViewById(R.id.flashcard_edit_button);
+        editButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //go to addCardActivity
+                Intent intentEdit=new Intent(MainActivity.this, addCardActivity.class);
+                intentEdit.putExtra("QUESTION_KEY",((TextView) findViewById(R.id.flashcard_question_textview)).getText().toString());
+                intentEdit.putExtra("ANSWER_KEY",((TextView) findViewById(R.id.flashcard_answer_textview)).getText().toString());
+                startActivityForResult(intentEdit,100);
+            }
+        });
+
     }
 
     //retrieve data addCardActivity gives, based on requestCode
