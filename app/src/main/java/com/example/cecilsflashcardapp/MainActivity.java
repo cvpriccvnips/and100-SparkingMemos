@@ -13,11 +13,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.List;
 //import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView questionTextView;
     TextView answerTextView;
+
+    //global class variable, access database
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
+    //keep track of current index
+    int cardIndex=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,8 +128,58 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intentEdit,100);
             }
         });
+        //takes in context as arg, context is where the database summoned from?
+        //summonned from main activity, use this, or getApplicationContext
+        flashcardDatabase=new FlashcardDatabase(getApplicationContext());
+        //get the most up-to-date list of flashcards
+        allFlashcards=flashcardDatabase.getAllCards();
 
+        if(allFlashcards!=null&&allFlashcards.size()>0) { //not null or empty
+            //GET first flashcard, and set it.
+            Flashcard firstCard = allFlashcards.get(0);
+            //pass in the question, and set it
+            questionTextView.setText(firstCard.getQuestion());
+            //pass in the answer, and set it
+            answerTextView.setText(firstCard.getAnswer());
+        }
+
+        //go to next card
+        findViewById(R.id.flashcard_next_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(allFlashcards==null||allFlashcards.size()==0){ //always check for edges before accessing list with index
+                    return;
+                }
+
+//                try{
+//                    Flashcard currentCard=allFlashcards.get(cardIndex);
+//                    //update question answer view
+//                    questionTextView.setText(currentCard.getQuestion());
+//                    answerTextView.setText(currentCard.getAnswer());
+//                }catch(IndexOutOfBoundsException e){
+//                    System.out.println(e);
+//                }
+
+                cardIndex+=1; //cardIndex++ //index to keep track of this
+
+                if(cardIndex>=allFlashcards.size()){ //condition check
+                    Snackbar.make(view, //takes in a view
+                            "you reached the end of card! going back to start",
+                            Snackbar.LENGTH_SHORT).show(); //how long to show the Snackbar
+
+                    cardIndex=0;  //reset the index so that user go back to beginning
+                }
+
+                Flashcard currentCard=allFlashcards.get(cardIndex);
+                //update question answer view
+                questionTextView.setText(currentCard.getQuestion());
+                answerTextView.setText(currentCard.getAnswer());
+            }
+        });
     }
+
+
+
 
     //retrieve data addCardActivity gives, based on requestCode
     @Override
@@ -132,6 +192,13 @@ public class MainActivity extends AppCompatActivity {
                 String answerString=data.getExtras().getString("ANSWER_KEY");
                 questionTextView.setText(questionString);
                 answerTextView.setText(answerString);
+
+                //transform question,answer into flashcard object
+                Flashcard flashcard=new Flashcard(questionString,answerString);
+                //add flashcard into database
+                flashcardDatabase.insertCard(flashcard);
+                //update list of flashcard
+                allFlashcards=flashcardDatabase.getAllCards();
             }
         }
     }

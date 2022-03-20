@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/edit/baseline_edit_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_right_alt/baseline_arrow_right_alt_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -29,8 +29,8 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="icon_edit" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/iconmonstr-fish-2.svg" />
+                            <entry key="outputName" value="icon_next" />
+                            <entry key="sourceFile" value="D:\Desktop\Github\Cecil-Flashcard-App\iconmonstr-fish-2.svg" />
                           </map>
                         </option>
                       </PersistentState>
