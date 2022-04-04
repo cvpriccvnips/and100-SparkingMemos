@@ -35,7 +35,8 @@ The app can save Flashcards made by the user and allows the user to both edit an
 ### App Walk-though
 
 
-<img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/main/lab3.gif" width=200><br>
+<!-- <img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/main/lab3.gif" width=200><br> -->
+<img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/247ca1b716047ad49b11e101ff1af9af604262b0/lab3.gif" width=200><br>
 
 
 ## Required
