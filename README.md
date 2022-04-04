@@ -30,10 +30,10 @@
 ## Lab 3
 
 ### App Description
-`TODO://` Add app description
+The app can save Flashcards made by the user and allows the user to both edit and delete Flashcards to his/her liking.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
+
 
 <img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/main/lab3.gif" width=200><br>
 
@@ -80,8 +80,6 @@ I completed all of the required steps for the first lab. In this lab I built a s
 ### App Walk-though
 
 <img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/main/lab1.gif" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [x] Create New Project in Android Studio
