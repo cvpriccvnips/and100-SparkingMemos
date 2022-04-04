@@ -30,7 +30,7 @@
 ## Lab 3
 
 ### App Description
-The app can save Flashcards made by the user and allows the user to both edit and delete Flashcards to his/her liking.
+I completed all of the required steps for the third lab. In this lab you wrote really complicated logic to make your app super useful, I now have a set of flashcards, and they're even stored on disk.
 
 ### App Walk-though
 
