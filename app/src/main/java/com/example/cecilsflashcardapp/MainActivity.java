@@ -5,11 +5,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 //import android.util.Log;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +53,25 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"I click the question",Toast.LENGTH_LONG).show();
                 questionTextView.setVisibility(View.INVISIBLE);
                 answerTextView.setVisibility(View.VISIBLE);
+
+
+
+// get the center for the clipping circle
+                int cx = answerTextView.getWidth() / 2;
+                int cy = answerTextView.getHeight() / 2;
+
+// get the final radius for the clipping circle
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+// create the animator for this view (the start radius is zero)
+                Animator anim = ViewAnimationUtils.createCircularReveal(answerTextView, cx, cy, 0f, finalRadius);
+
+// hide the question and show the answer to prepare for playing the animation!
+                questionTextView.setVisibility(View.INVISIBLE);
+                answerTextView.setVisibility(View.VISIBLE);
+
+                anim.setDuration(3000);
+                anim.start();
             }
         });
 
@@ -114,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
 //                intent.putExtra("ANSWER_KEY","Enter your answer");
                 //use request code
                 startActivityForResult(intent,100);
+                //first parameter is enter animation, second is exit animation
+                overridePendingTransition(R.anim.right_in,R.anim.left_out);
             }
         });
 
@@ -150,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
                 if(allFlashcards==null||allFlashcards.size()==0){ //always check for edges before accessing list with index
                     return;
                 }
-
 //                try{
 //                    Flashcard currentCard=allFlashcards.get(cardIndex);
 //                    //update question answer view
@@ -159,9 +183,7 @@ public class MainActivity extends AppCompatActivity {
 //                }catch(IndexOutOfBoundsException e){
 //                    System.out.println(e);
 //                }
-
                 cardIndex+=1; //cardIndex++ //index to keep track of this
-
                 if(cardIndex>=allFlashcards.size()){ //condition check
                     Snackbar.make(view, //takes in a view
                             "you reached the end of card! going back to start",
@@ -170,10 +192,45 @@ public class MainActivity extends AppCompatActivity {
                     cardIndex=0;  //reset the index so that user go back to beginning
                 }
 
-                Flashcard currentCard=allFlashcards.get(cardIndex);
-                //update question answer view
-                questionTextView.setText(currentCard.getQuestion());
-                answerTextView.setText(currentCard.getAnswer());
+
+
+                //load animation
+                //view variable in onClickListener
+                final Animation leftOutAnim= AnimationUtils.loadAnimation(view.getContext(),R.anim.left_out);
+                final Animation rightInAnim= AnimationUtils.loadAnimation(view.getContext(),R.anim.right_in);
+
+                //set animationListener for left out first
+                //let right out happen when left out finishes
+                leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        // this method is called when the animation first starts
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // this method is called when the animation is finished playing
+                        questionTextView.startAnimation(rightInAnim);
+
+                        //move previous logic here
+                        //update the next card, get next card
+                        Flashcard currentCard=allFlashcards.get(cardIndex);
+                        //update question, answer of next card
+                        questionTextView.setText(currentCard.getQuestion());
+                        answerTextView.setText(currentCard.getAnswer());
+                        //make user see next question
+                        questionTextView.setVisibility(View.VISIBLE);
+                        answerTextView.setVisibility(View.INVISIBLE);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                        // we don't need to worry about this method
+                    }
+                });
+                //trigger the first animation
+                questionTextView.startAnimation(leftOutAnim);
             }
         });
     }
