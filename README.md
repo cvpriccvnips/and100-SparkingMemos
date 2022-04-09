@@ -3,14 +3,10 @@
 ## Lab 4
 
 ### App Description
-`TODO://` Add app description
+I completed all of the required steps for the lab. In this lab I made using my app a very delightful experience by adding assets and animations.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
-
 <img src="https://github.com/jzhang9632/Cecil-Flashcard-App/blob/d4d5c27224f9d1b4e1dded83b275ff5b1c4e1f3b/lab4.gif" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [x] User sees a transition animation when going from the main screen to the add card screen.
