@@ -1,7 +1,5 @@
 ## Jinda(Cecil)'s Flashcard APP
 
-## Lab 4
-
 ### App Description
 I completed all of the required steps for the lab. In this lab I made using my app a very delightful experience by adding assets and animations.
 
